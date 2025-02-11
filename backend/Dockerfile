@@ -9,6 +9,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /chat-room
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /chat-room .
-COPY .env .
 EXPOSE 8080
 CMD ["./chat-room"]
